@@ -73,8 +73,11 @@ def list_operations(numbers):
     numbers (list): The list of numbers.
     
     Returns:
-    tuple: A tuple containing the sum, maximum, and minimum of the numbers.
+    tuple: A tuple containing the sum, maximum, and minimum numbers.
     """
+    if not numbers:  # Check if the list is empty
+        return (0, None, None)
+
     total_sum = sum(numbers)
     max_number = max(numbers)
     min_number = min(numbers)
