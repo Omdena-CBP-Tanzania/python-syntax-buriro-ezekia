@@ -1,7 +1,7 @@
 import pytest
 from assignment import *
+
 # Part 1: Python Syntax (30 points)
-"""
 
 # Task 1: Function format_string(name, age)
 def format_string(name, age):
@@ -12,7 +12,7 @@ def format_string(name, age):
     return f"My name is {name} and I am {age} years old"
 
 # Example usage
-print(format_string("Buriro", 29))  # Output: My name is Buriro and I am 30 years old
+print(format_string("Buriro", 29))  # Output: My name is Buriro and I am 29 years old
 
 # Task 2: Function conditional_check(number)
 def conditional_check(number):
@@ -46,7 +46,7 @@ def loop_sum(n):
 # Example usage
 print(loop_sum(5))  # Output: 15 (1 + 2 + 3 + 4 + 5)
 
-"""# Part 2: Data Structures (40 points)"""
+# Part 2: Data Structures (40 points)
 
 # Task 1: Function list_operations(numbers)
 def list_operations(numbers):
@@ -100,7 +100,7 @@ students_dict = {
 }
 print(dict_operations(students_dict))  # Output: ['Malima', 'Wambura']
 
-# ask 3: Function set_operations(list1, list2)
+# Task 3: Function set_operations(list1, list2)
 def set_operations(list1, list2):
     """
     Take two lists and return a set of common elements.
@@ -120,7 +120,7 @@ list1 = [1, 2, 3, 4, 5]
 list2 = [4, 5, 6, 7, 8]
 print(set_operations(list1, list2))  # Output: {4, 5}
 
-"""# Part 3: Operators (30 points)"""
+# Part 3: Operators (30 points)
 
 # Task 1: Function arithmetic_ops(a, b)
 def arithmetic_ops(a, b):
@@ -152,7 +152,7 @@ def logical_ops(x, y):
     """
     Perform logical operations on two boolean values and return a dictionary with the results.
 
-    Returns
+    Returns:
     - 'and': x and y
     - 'or': x or y
     - 'not_x': not x
@@ -175,7 +175,7 @@ def bitwise_ops(a, b):
     """
     Perform bitwise operations on two integers and return a dictionary with the results.
 
-    Returns
+    Returns:
     - 'and': a & b
     - 'or': a | b
     - 'xor': a ^ b
@@ -192,4 +192,3 @@ def bitwise_ops(a, b):
 # Example usage:
 print(bitwise_ops(10, 5))  # Output: {'and': 0, 'or': 15, 'xor': 15}
 print(bitwise_ops(12, 7))  # Output: {'and': 4, 'or': 15, 'xor': 11}
-
