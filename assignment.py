@@ -4,7 +4,13 @@
 def format_string(name, age):
     """
     Create a formatted string using f-strings.
-    Return "My name is {name} and I am {age} years old".
+    
+    Parameters:
+    name (str): The name of the person.
+    age (int): The age of the person.
+    
+    Returns:
+    str: A formatted string.
     """
     return f"My name is {name} and I am {age} years old"
 
@@ -15,7 +21,12 @@ print(format_string("Buriro", 29))  # Output: My name is Buriro and I am 29 year
 def conditional_check(number):
     """
     Check if the number is greater than, less than, or equal to 10.
-    Return "Greater", "Lesser", or "Equal" accordingly.
+    
+    Parameters:
+    number (int): The number to check.
+    
+    Returns:
+    str: "Greater", "Lesser", or "Equal" accordingly.
     """
     if number > 10:
         return "Greater"
@@ -33,12 +44,17 @@ print(conditional_check(10))  # Output: Equal
 def loop_sum(n):
     """
     Use a loop to sum numbers from 1 to n.
-    Return the sum.
+    
+    Parameters:
+    n (int): The upper limit of the range.
+    
+    Returns:
+    int: The sum of numbers from 1 to n.
     """
-    total = 0
-    for i in range(1, n + 1):
-        total += i
-    return total
+    total_sum = 0
+    for number in range(1, n + 1):
+        total_sum += number
+    return total_sum
 
 # Example usage
 print(loop_sum(5))  # Output: 15 (1 + 2 + 3 + 4 + 5)
@@ -52,17 +68,16 @@ def list_operations(numbers):
     - Sum of all numbers
     - Maximum number
     - Minimum number
+    
+    Parameters:
+    numbers (list): The list of numbers.
+    
+    Returns:
+    tuple: A tuple containing the sum, maximum, and minimum of the numbers.
     """
-    # Calculate the sum of all numbers
     total_sum = sum(numbers)
-
-    # Find the maximum number in the list
     max_number = max(numbers)
-
-    # Find the minimum number in the list
     min_number = min(numbers)
-
-    # Return the results as a tuple
     return (total_sum, max_number, min_number)
 
 # Example usage
@@ -74,18 +89,17 @@ def dict_operations(students_dict):
     """
     Take a dictionary of student names and scores.
     Return a list of names of students who scored above 80.
+    
+    Parameters:
+    students_dict (dict): A dictionary where keys are student names and values are their scores.
+    
+    Returns:
+    list: A list of names of students who scored above 80.
     """
-    # Initialize an empty list to store the names of students who scored above 80
     high_scorers = []
-
-    # Iterate through the dictionary items
     for name, score in students_dict.items():
-        # Check if the student's score is above 80
         if score > 80:
-            # Add the student's name to the list
             high_scorers.append(name)
-
-    # Return the list of high scorers
     return high_scorers
 
 # Example usage
@@ -101,16 +115,15 @@ print(dict_operations(students_dict))  # Output: ['Malima', 'Wambura']
 def set_operations(list1, list2):
     """
     Take two lists and return a set of common elements.
+    
+    Parameters:
+    list1 (list): The first list of elements.
+    list2 (list): The second list of elements.
+    
+    Returns:
+    set: A set of common elements.
     """
-    # Convert the lists to sets
-    set1 = set(list1)
-    set2 = set(list2)
-
-    # Find the common elements between the two sets
-    common_elements = set1.intersection(set2)
-
-    # Return the set of common elements
-    return common_elements
+    return set(list1) & set(list2)
 
 # Example usage
 list1 = [1, 2, 3, 4, 5]
@@ -123,21 +136,20 @@ print(set_operations(list1, list2))  # Output: {4, 5}
 def arithmetic_ops(a, b):
     """
     Perform arithmetic operations on two numbers and return a dictionary with the results.
-
+    
+    Parameters:
+    a (int or float): The first number.
+    b (int or float): The second number.
+    
     Returns:
-    - 'sum': a + b
-    - 'difference': a - b
-    - 'product': a * b
-    - 'quotient': a / b (handle division by zero)
+    dict: A dictionary with the results of sum, difference, product, and quotient.
     """
-    # Initialize the result dictionary
     results = {
         'sum': a + b,
         'difference': a - b,
         'product': a * b,
         'quotient': None if b == 0 else a / b
     }
-
     return results
 
 # Example usage
@@ -148,19 +160,19 @@ print(arithmetic_ops(10, 0))  # Output: {'sum': 10, 'difference': 10, 'product':
 def logical_ops(x, y):
     """
     Perform logical operations on two boolean values and return a dictionary with the results.
-
+    
+    Parameters:
+    x (bool): The first boolean value.
+    y (bool): The second boolean value.
+    
     Returns:
-    - 'and': x and y
-    - 'or': x or y
-    - 'not_x': not x
+    dict: A dictionary with the results of 'and', 'or', and 'not_x'.
     """
-    # Initialize the result dictionary
     results = {
         'and': x and y,
         'or': x or y,
         'not_x': not x
     }
-
     return results
 
 # Example usage
@@ -171,19 +183,19 @@ print(logical_ops(False, False)) # Output: {'and': False, 'or': False, 'not_x': 
 def bitwise_ops(a, b):
     """
     Perform bitwise operations on two integers and return a dictionary with the results.
-
+    
+    Parameters:
+    a (int): The first integer.
+    b (int): The second integer.
+    
     Returns:
-    - 'and': a & b
-    - 'or': a | b
-    - 'xor': a ^ b
+    dict: A dictionary with the results of 'and', 'or', and 'xor'.
     """
-    # Initialize the result dictionary
     results = {
         'and': a & b,
         'or': a | b,
         'xor': a ^ b
     }
-
     return results
 
 # Example usage:
