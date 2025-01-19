@@ -10,7 +10,7 @@ def format_string(name, age):
     return f"My name is {name} and I am {age} years old"
 
 # Example usage
-print(format_string("Buriro", 29))  # Output: My name is Alice and I am 30 years old
+print(format_string("Buriro", 29))  # Output: My name is Buriro and I am 30 years old
 
 # Task 2: Function conditional_check(number)
 def conditional_check(number):
