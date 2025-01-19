@@ -4,191 +4,92 @@ from assignment import *
 # Part 1: Python Syntax (30 points)
 
 # Task 1: Function format_string(name, age)
-def format_string(name, age):
+def test_format_string():
     """
-    Create a formatted string using f-strings.
-    Return "My name is {name} and I am {age} years old".
+    Test the format_string function with different inputs.
     """
-    return f"My name is {name} and I am {age} years old"
-
-# Example usage
-print(format_string("Buriro", 29))  # Output: My name is Buriro and I am 29 years old
+    assert format_string("Buriro", 29) == "My name is Buriro and I am 29 years old"
+    assert format_string("Ezekia", 25) == "My name is Ezekia and I am 25 years old"
+    assert format_string("", 0) == "My name is  and I am 0 years old"
 
 # Task 2: Function conditional_check(number)
-def conditional_check(number):
+def test_conditional_check():
     """
-    Check if the number is greater than, less than, or equal to 10.
-    Return "Greater", "Lesser", or "Equal" accordingly.
+    Test the conditional_check function with different inputs.
     """
-    if number > 10:
-        return "Greater"
-    elif number < 10:
-        return "Lesser"
-    else:
-        return "Equal"
-
-# Example usage
-print(conditional_check(15))  # Output: Greater
-print(conditional_check(5))   # Output: Lesser
-print(conditional_check(10))  # Output: Equal
+    assert conditional_check(15) == "Greater"
+    assert conditional_check(5) == "Lesser"
+    assert conditional_check(10) == "Equal"
 
 # Task 3: Function loop_sum(n)
-def loop_sum(n):
+def test_loop_sum():
     """
-    Use a loop to sum numbers from 1 to n.
-    Return the sum.
+    Test the loop_sum function with different inputs.
     """
-    total = 0
-    for i in range(1, n + 1):
-        total += i
-    return total
-
-# Example usage
-print(loop_sum(5))  # Output: 15 (1 + 2 + 3 + 4 + 5)
+    assert loop_sum(5) == 15  # 1 + 2 + 3 + 4 + 5
+    assert loop_sum(0) == 0
+    assert loop_sum(1) == 1
 
 # Part 2: Data Structures (40 points)
 
 # Task 1: Function list_operations(numbers)
-def list_operations(numbers):
+def test_list_operations():
     """
-    Take a list of numbers and return a tuple containing:
-    - Sum of all numbers
-    - Maximum number
-    - Minimum number
+    Test the list_operations function with different inputs.
     """
-    # Calculate the sum of all numbers
-    total_sum = sum(numbers)
-
-    # Find the maximum number in the list
-    max_number = max(numbers)
-
-    # Find the minimum number in the list
-    min_number = min(numbers)
-
-    # Return the results as a tuple
-    return (total_sum, max_number, min_number)
-
-# Example usage
-numbers = [1, 2, 3, 4, 5]
-print(list_operations(numbers))  # Output: (15, 5, 1)
+    numbers = [1, 2, 3, 4, 5]
+    assert list_operations(numbers) == (15, 5, 1)
+    assert list_operations([]) == (0, None, None)  # Handle empty list
 
 # Task 2: Function dict_operations(students_dict)
-def dict_operations(students_dict):
+def test_dict_operations():
     """
-    Take a dictionary of student names and scores.
-    Return a list of names of students who scored above 80.
+    Test the dict_operations function with different inputs.
     """
-    # Initialize an empty list to store the names of students who scored above 80
-    high_scorers = []
-
-    # Iterate through the dictionary items
-    for name, score in students_dict.items():
-        # Check if the student's score is above 80
-        if score > 80:
-            # Add the student's name to the list
-            high_scorers.append(name)
-
-    # Return the list of high scorers
-    return high_scorers
-
-# Example usage
-students_dict = {
-    "Malima": 85,
-    "Mwita": 75,
-    "Wambura": 90,
-    "David": 60
-}
-print(dict_operations(students_dict))  # Output: ['Malima', 'Wambura']
+    students_dict = {
+        "Malima": 85,
+        "Mwita": 75,
+        "Wambura": 90,
+        "David": 60
+    }
+    assert dict_operations(students_dict) == ['Malima', 'Wambura']
+    assert dict_operations({}) == []  # Handle empty dictionary
 
 # Task 3: Function set_operations(list1, list2)
-def set_operations(list1, list2):
+def test_set_operations():
     """
-    Take two lists and return a set of common elements.
+    Test the set_operations function with different inputs.
     """
-    # Convert the lists to sets
-    set1 = set(list1)
-    set2 = set(list2)
-
-    # Find the common elements between the two sets
-    common_elements = set1.intersection(set2)
-
-    # Return the set of common elements
-    return common_elements
-
-# Example usage
-list1 = [1, 2, 3, 4, 5]
-list2 = [4, 5, 6, 7, 8]
-print(set_operations(list1, list2))  # Output: {4, 5}
+    list1 = [1, 2, 3, 4, 5]
+    list2 = [4, 5, 6, 7, 8]
+    assert set_operations(list1, list2) == {4, 5}
+    assert set_operations([], []) == set()  # Handle empty lists
 
 # Part 3: Operators (30 points)
 
 # Task 1: Function arithmetic_ops(a, b)
-def arithmetic_ops(a, b):
+def test_arithmetic_ops():
     """
-    Perform arithmetic operations on two numbers and return a dictionary with the results.
-
-    Returns:
-    - 'sum': a + b
-    - 'difference': a - b
-    - 'product': a * b
-    - 'quotient': a / b (handle division by zero)
+    Test the arithmetic_ops function with different inputs.
     """
-    # Initialize the result dictionary
-    results = {
-        'sum': a + b,
-        'difference': a - b,
-        'product': a * b,
-        'quotient': None if b == 0 else a / b
-    }
-
-    return results
-
-# Example usage
-print(arithmetic_ops(10, 5))  # Output: {'sum': 15, 'difference': 5, 'product': 50, 'quotient': 2.0}
-print(arithmetic_ops(10, 0))  # Output: {'sum': 10, 'difference': 10, 'product': 0, 'quotient': None}
+    assert arithmetic_ops(10, 5) == {'sum': 15, 'difference': 5, 'product': 50, 'quotient': 2.0}
+    assert arithmetic_ops(10, 0) == {'sum': 10, 'difference': 10, 'product': 0, 'quotient': None}
+    assert arithmetic_ops(-10, -5) == {'sum': -15, 'difference': -5, 'product': 50, 'quotient': 2.0}
 
 # Task 2: Function logical_ops(x, y)
-def logical_ops(x, y):
+def test_logical_ops():
     """
-    Perform logical operations on two boolean values and return a dictionary with the results.
-
-    Returns:
-    - 'and': x and y
-    - 'or': x or y
-    - 'not_x': not x
+    Test the logical_ops function with different inputs.
     """
-    # Initialize the result dictionary
-    results = {
-        'and': x and y,
-        'or': x or y,
-        'not_x': not x
-    }
-
-    return results
-
-# Example usage
-print(logical_ops(True, False))  # Output: {'and': False, 'or': True, 'not_x': False}
-print(logical_ops(False, False)) # Output: {'and': False, 'or': False, 'not_x': True}
+    assert logical_ops(True, False) == {'and': False, 'or': True, 'not_x': False}
+    assert logical_ops(False, False) == {'and': False, 'or': False, 'not_x': True}
+    assert logical_ops(True, True) == {'and': True, 'or': True, 'not_x': False}
 
 # Task 3: Function bitwise_ops(a, b)
-def bitwise_ops(a, b):
+def test_bitwise_ops():
     """
-    Perform bitwise operations on two integers and return a dictionary with the results.
-
-    Returns:
-    - 'and': a & b
-    - 'or': a | b
-    - 'xor': a ^ b
+    Test the bitwise_ops function with different inputs.
     """
-    # Initialize the result dictionary
-    results = {
-        'and': a & b,
-        'or': a | b,
-        'xor': a ^ b
-    }
-
-    return results
-
-# Example usage:
-print(bitwise_ops(10, 5))  # Output: {'and': 0, 'or': 15, 'xor': 15}
-print(bitwise_ops(12, 7))  # Output: {'and': 4, 'or': 15, 'xor': 11}
+    assert bitwise_ops(10, 5) == {'and': 0, 'or': 15, 'xor': 15}
+    assert bitwise_ops(12, 7) == {'and': 4, 'or': 15, 'xor': 11}
+    assert bitwise_ops(0, 0) == {'and': 0, 'or': 0, 'xor': 0}
